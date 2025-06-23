@@ -1,0 +1,76 @@
+//Simple rock-paper-scissors,best of 3
+#include <stdio.h>
+int main () {
+int i,choice1,choice2,p1=0,p2=0,iso=0;
+char User1[20],User2[20];//first-second user
+
+
+ printf("Rock-Paper-Scissors\n");//users input name
+	printf("User1 give your name : \n");
+	scanf("%20s",User1);
+ printf("User2 give your name : \n");
+	scanf("%20s",User2);
+	printf("Let the game begin \n");
+	
+	for (i=1;i<=3;i++){//rounds
+		printf("%s give your choice : \n",User1);//choices
+	printf("1. Rock \n");
+	printf("2. Scissors \n");
+	printf("3. Paper \n");
+	scanf("%d",&choice1);	
+	
+	if (choice1 <1 || choice1 >3){
+		printf("Wrong choice,please try again \n");//validity check
+	}
+	printf("%s give your choice : \n",User2);
+	printf("1. Rock \n");
+	printf("2. Scissors \n");
+	printf("3. Paper \n");
+	scanf("%d",&choice2);
+	
+	if (choice2 <1 || choice2 >3){
+		printf("Wrong choice,please try again \n");		
+}
+	if (choice1==choice2){
+	printf("Round  %d is a draw \n",i);//case of draw
+	iso=iso+1;
+}
+	else if (choice1==1 && choice2==2){//case of win
+		printf("%s wins round \n",User1);
+		p1=p1+1;
+	}
+	else if (choice1==2 && choice2==3){
+		printf("%s wins round \n",User1);
+		p1=p1+1;
+	}
+	else if (choice1==3 && choice2==1){
+		printf("%s win round \n ",User1);
+		p1=p1+1;
+	}
+	else{
+		printf("%s wins round \n",User2);
+		p2=p2+1;
+	}
+}
+ 	printf("End of rounds \n");//end of game and showing results
+ 	printf("%s has %d points \n",User1,p1);
+ 	printf("%s has %d points \n",User2,p2);
+ 	printf("Draws : %d \n",iso);
+ 	
+ 	if (p1>p2){
+ 		printf("Winner : %s \n",User1);
+	 }
+	 else if (p2>p1){
+		printf("Winner : %s \n",User2);
+	}
+	else{
+		printf("Game ended up in a draw \n");
+	}
+	printf("----Game over----");
+
+
+
+
+
+  
+}
